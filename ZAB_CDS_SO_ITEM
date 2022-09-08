@@ -1,0 +1,43 @@
+@AbapCatalog.sqlViewName: 'ZABSOHEADITEM01'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CDS For Sales Order Data (Header_Item)'
+define view ZAB_CDS_SO_ITEM
+  as select from    vbap
+    left outer join ZAB_CDS_SO_HEAD as Header on vbap.vbeln = Header.Sales_Order_number
+{
+
+  //VBAK Fileds
+  Sales_Order_number,
+  Sales_Organization,
+  Distribution_Channel,
+  Division,
+  SD_Document_Category,
+  Transaction_Group,
+  Sales_Document_Type,
+  Created_On,
+  Created_By,
+  Document_Date,
+
+  //VBAP Fields
+  posnr as Sales_Document_Item,
+  matnr as Material_Number,
+  matkl as Material_Group,
+  zmeng as Target_Quantity_in_Sales_Units,
+  zieme as Target_Quantity_UoM,
+  lfgsa as Delivery_Status_Item,
+  case lfgsa
+    when ''
+        then 'Not Relevant'
+    when 'A'
+        then 'Not yet processed'
+    when 'B'
+        then 'Partially processed'
+    when 'C'
+        then 'Completely processed'
+    end as Status_Description
+}
+where
+     matkl = 'ZRACING'
+  or matkl = 'ZMTN'
