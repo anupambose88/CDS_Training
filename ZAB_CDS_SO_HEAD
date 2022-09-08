@@ -1,0 +1,20 @@
+@AbapCatalog.sqlViewName: 'ZABSOHEAD1'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'CDS For Sales Order Header Data'
+define view ZAB_CDS_SO_HEAD
+  as select from vbak
+{
+
+  vbeln as Sales_Order_number,
+  vkorg as Sales_Organization,
+  vtweg as Distribution_Channel,
+  spart as Division,
+  vbtyp as SD_Document_Category,
+  trvog as Transaction_Group,
+  auart as Sales_Document_Type,
+  erdat as Created_On,
+  ernam as Created_By,
+  audat as Document_Date
+}
