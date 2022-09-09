@@ -1,4 +1,4 @@
-//Fetch Record For Sales Order Details
+//Fetch Sales Order Data Using Join
 //Header Data from ZAB_CDS_SO_HEAD CDS View
 //Item Data from vbap
 
