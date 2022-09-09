@@ -1,0 +1,23 @@
+@AbapCatalog.sqlViewName: 'ZABSOASSO'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'CDS For Sales Order Item Association'
+define view ZAB_ASSO_SO_ITEM
+  as select from ZAB_CDS_SO_HEAD
+  association [1] to ZAB_CDS_SO_ITEM as _Item on $projection.Sales_Order_number = _Item.Sales_Order_number
+{
+
+  Sales_Order_number,
+  Sales_Organization,
+  Distribution_Channel,
+  Division,
+  SD_Document_Category,
+  Transaction_Group,
+  Sales_Document_Type,
+  Created_On,
+  Created_By,
+  Document_Date,
+
+  _Item // Make association public
+}
