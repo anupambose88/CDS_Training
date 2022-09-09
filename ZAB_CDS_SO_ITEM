@@ -1,3 +1,7 @@
+//Fetch Record For Sales Order Details
+//Header Data from ZAB_CDS_SO_HEAD CDS View
+//Item Data from vbap
+
 @AbapCatalog.sqlViewName: 'ZABSOHEADITEM01'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
