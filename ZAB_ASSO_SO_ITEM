@@ -2,6 +2,7 @@
 //Header Data from ZAB_CDS_SO_HEAD CDS View
 //Item Data from ZAB_ASSO_SO_ITEM CDS View
 
+
 @AbapCatalog.sqlViewName: 'ZABSOASSO'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
