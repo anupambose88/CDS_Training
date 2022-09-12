@@ -1,0 +1,26 @@
+//Fetch Data From Sales Order Header Table VBAK
+//Using VBELN Sales Order Number as a Importing Parameter
+@AbapCatalog.sqlViewName: 'ZABSOHEAD2'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Sales Order Header With Parameter'
+define view ZAB_CDS_SO_HEAD1
+  with parameters
+    SO_Number : vbeln
+  as select from vbak
+{
+
+  key vbeln as SalesOrderNumber,
+      vkorg as SalesOrganization,
+      vtweg as DistributionChannel,
+      spart as Division,
+      vbtyp as SDDocumentCategory,
+      trvog as TransactionGroup,
+      auart as SalesDocumentType,
+      erdat as CreatedOn,
+      ernam as CreatedBy,
+      audat as DocumentDate
+}
+where
+  vbeln = $parameters.SO_Number
