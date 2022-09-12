@@ -1,6 +1,6 @@
 //Fetch Data From Sales Order Header Table VBAK
 
-@AbapCatalog.sqlViewName: 'ZABSOHEAD1'
+@AbapCatalog.sqlViewName: 'ZABSOHEAD'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
