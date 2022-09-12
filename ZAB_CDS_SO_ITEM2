@@ -1,4 +1,4 @@
-// CDS To Show Count, Min, Max, Avg From SO Item VBAP Table
+// CDS To Show Count, Min, Max, Avg,Sum From SO Item VBAP Table
 
 @AbapCatalog.sqlViewName: 'ZABSOITEM02'
 @AbapCatalog.compiler.compareFilter: true
