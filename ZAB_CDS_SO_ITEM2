@@ -1,0 +1,18 @@
+// CDS To Show Count, Min, Max, Avg From SO Item VBAP Table
+
+@AbapCatalog.sqlViewName: 'ZABSOITEM02'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'SO Item With Count, Mix, Max, Sum'
+define view ZAB_CDS_SO_ITEM2
+  as select from vbap
+{
+  posnr      as SalesDocumentItem,
+  count (*)  as NoOfItems,
+  max(netwr) as MaximumAmount,
+  min(netwr) as MinimumAmount,
+  sum(netwr) as TotalAmount
+}
+group by
+  posnr
