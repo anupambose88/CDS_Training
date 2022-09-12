@@ -1,0 +1,12 @@
+//Extend CDS View ZAB_CDS_SO_HEAD CDS
+//Added extra Field From VBAK Table
+
+@AbapCatalog.sqlViewAppendName: 'ZABSOHEAD3'
+@EndUserText.label: 'Sales Order Header With Extension'
+extend view ZAB_CDS_SO_HEAD with ZAB_CDS_SO_HEAD3
+{
+
+  vbak.bstnk as CustomerReference,
+  vbak.knumv as Number_of_theDocumentCondition
+
+}
