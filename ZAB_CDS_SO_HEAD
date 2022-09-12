@@ -9,7 +9,7 @@ define view ZAB_CDS_SO_HEAD
   as select from vbak
 {
 
-  vbeln as Sales_Order_number,
+  key vbeln as Sales_Order_number,
   vkorg as Sales_Organization,
   vtweg as Distribution_Channel,
   spart as Division,
