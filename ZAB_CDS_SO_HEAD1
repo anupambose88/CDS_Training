@@ -1,5 +1,6 @@
 //Fetch Data From Sales Order Header Table VBAK
 //Using VBELN Sales Order Number as a Importing Parameter
+
 @AbapCatalog.sqlViewName: 'ZABSOHEAD1'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
